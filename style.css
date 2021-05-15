@@ -21,8 +21,13 @@ body{
 }
 
 .mid-section{
-    background-color: var(--TM-highlight);
+    background-color: var(--TM-background);
     color:     var(--TM-text-light);
+    background-image:  url("https://media2.giphy.com/media/bsRSKZhTXgDXa/giphy-downsized.gif")
+}
+
+.container-bg-highlight{
+    background-color: var(--TM-highlight);
 }
 
 .top-screen{
