@@ -75,13 +75,12 @@ function drawScreen() {
 
 function drawUpgrades(side, count, starting) {
     let upgradeElem = document.getElementById(`upgrade-space-${side}`)
-    let template = []
+    let template = ""
 
     for (let x = starting; x < starting + count; x++) {
-        // @ts-ignore
-        template = + `
+        template += `
         <div class="row no-gutters text-dark  border-info rounded bg-light my-3">
-            <div class="col-4" onclick="${productionUpgrades[x].func}()>
+            <div class="col-4" onclick="${productionUpgrades[x].func}()">
                 <img class="img-fluid" src="${productionUpgrades[x].img}"
                     alt="..." width="100">
             </div>
@@ -95,7 +94,6 @@ function drawUpgrades(side, count, starting) {
         </div>
         `
     }
-    // @ts-ignore
     upgradeElem.innerHTML = template
 }
 
