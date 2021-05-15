@@ -1,0 +1,49 @@
+:root{
+    --TM-background:   #463f047e;
+    --TM-text:          #020c08f1;
+    --TM-highlight:     #273b74e0;
+    --TM-text-light:     #e3eef8;
+}
+
+body{
+    background-color: var(--TM-background);
+    color:             var(--TM-text);
+}
+
+.head{
+    background-color: var(--TM-highlight);
+    font-size:medium;
+}
+
+.mid-section{
+    background-color: var(--TM-highlight);
+    color:     var(--wk1-text-light);
+}
+
+.top-screen{
+    background-image: url("assets/img/toaster.jpg");
+}
+
+.card-text{
+    color: var(--TM-highlight);
+}
+
+p.no-margin{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size:x-small;
+    text-align: center;
+    justify-content: content-distribution;   
+}
+
+.center{
+  justify-content: center;
+}
+
+.space-around{
+    justify-content: space-around; 
+}
+
+.space-between{
+    justify-content: space-between;
+}
