@@ -39,6 +39,24 @@ let productionUpgrades = [{
     func: "upgradeIncRobotToast",
     passive: true,
     enabled: false
+},
+{
+    name: "3rd Robot Toaster",
+    desc: "period reduced to 3s",
+    cost: 2000,
+    img: "assets/img/speed-upgrade.gif",
+    func: "upgradeIncRobotToast",
+    passive: true,
+    enabled: false
+},
+{
+    name: "4th Robot Toaster",
+    desc: "period reduced to 3s",
+    cost: 2000,
+    img: "assets/img/speed-upgrade.gif",
+    func: "upgradeIncRobotToast",
+    passive: true,
+    enabled: false
 }]
 
 function pickToast() {
@@ -87,4 +105,4 @@ function updateNumToast() {
     console.log("numToastPerClick updated to two!", numToastPerClick)
 }
 
-//drawScreen()
+drawScreen()
