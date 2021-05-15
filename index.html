@@ -43,10 +43,9 @@
             <div class="col-4 d-flex flex-wrap offset=2">
                 <div class="container border rounded">
                     <div class="row"></div>
-                    <div class="col-12 " style="max-width: 540px;">
-                        <div id="upgrade-space-left"
-                            class="row no-gutters text-dark  border-info rounded bg-light my-3">
-                            <!--  start here left side -->
+                    <div id="upgrade-space-left" class="col-12 " style="max-width: 540px;">
+                        <!--  start here left blow away and repla in JS side left -->
+                        <div class="row no-gutters text-dark border-info rounded bg-light my-3">
                             <div class="col-4" onclick="updateNumToast()">
                                 <img class="img-fluid" src="assets/img/10k-toaster.png" alt="..." width="100">
                             </div>
@@ -58,25 +57,21 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!--
                         <div class="row no-gutters text-dark border-info rounded bg-light my-3"
-                        onclick="updateFlameToast(1)">
-               -->
-                        <div class="col-4" onclick="updateFlameToast()">
-                            <img class="img-fluid" src="assets/img/10k-toaster.png" onclick="updateNumToast()" alt="..."
-                                width="100">
-                        </div>
-                        <div class="col-8  my-auto ">
-                            <div class="">
-                                <p class="no-margin"> 10K Toaster</p>
-                                <p class="no-margin"> +2 per click</p>
-                                <p class="no-margin"> Cost: 100</p>
+                            onclick="updateFlameToast(1)">
+
+                            <div class="col-4" onclick="updateFlameToast()">
+                                <img class="img-fluid" src="assets/img/10k-toaster.png" onclick="updateNumToast()"
+                                    alt="..." width="100">
+                            </div>
+                            <div class="col-8  my-auto ">
+                                <div class="">
+                                    <p class="no-margin"> 10K Toaster</p>
+                                    <p class="no-margin"> +2 per click</p>
+                                    <p class="no-margin"> Cost: 100</p>
+                                </div>
                             </div>
                         </div>
-                        <!--    </div> -->
-
-
                         <div class="row no-gutters text-dark border-info rounded bg-light my-3">
                             <div class="col-4">
                                 <img class="img-fluid" src="assets/img/10k-toaster.png" alt="..." width="100">
@@ -89,6 +84,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -96,7 +92,8 @@
             <div class="col-4 d-flex flex-wrap offset=2">
                 <div class="container border rounded">
                     <div class="row"></div>
-                    <div class="col-12 " style="max-width: 540px;">
+                    <div id="upgrade-space-right" class="col-12 " style="max-width: 540px;">
+                        <!--  start here left blow away and repla in JS side right -->
                         <div class="row no-gutters text-dark  border-info rounded bg-light my-3"
                             onclick="updateNumToast()">
                             <div class="col-4">

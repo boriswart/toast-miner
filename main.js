@@ -62,17 +62,19 @@ function drawUpgrades(side, count, starting) {
     for (let x = starting; x < starting + count; x++) {
         // @ts-ignore
         template = + `
-        <div class="col-4" onclick="${productionUpgrades[x].func}()>
-            <img class="img-fluid" src="${productionUpgrades[x].img}"
-                alt="..." width="100">
-        </div>
-        <div class="col-8  my-auto">
-            <div>
-                <p class="no-margin"> ${productionUpgrades[x].name}</p>
-                <p class="no-margin"> ${productionUpgrades[x].desc}</p>
-                <p class="no-margin"> ${productionUpgrades[x].cost}</p>
+        <div class="row no-gutters text-dark  border-info rounded bg-light my-3">
+            <div class="col-4" onclick="${productionUpgrades[x].func}()>
+                <img class="img-fluid" src="${productionUpgrades[x].img}"
+                    alt="..." width="100">
             </div>
-        </div>  
+            <div class="col-8  my-auto">
+                <div>
+                    <p class="no-margin"> ${productionUpgrades[x].name}</p>
+                    <p class="no-margin"> ${productionUpgrades[x].desc}</p>
+                    <p class="no-margin"> ${productionUpgrades[x].cost}</p>
+                </div>
+            </div>
+        </div>
         `
     }
     // @ts-ignore
