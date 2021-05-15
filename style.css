@@ -14,10 +14,15 @@ body{
     background-color: var(--TM-highlight);
     font-size:medium;
 }
+.maxw-100{
+    max-width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 .mid-section{
     background-color: var(--TM-highlight);
-    color:     var(--wk1-text-light);
+    color:     var(--TM-text-light);
 }
 
 .top-screen{
@@ -35,6 +40,11 @@ p.no-margin{
     text-align: center;
     justify-content: content-distribution;   
 }
+
+row.height-50{
+    height: 50px;
+}
+
 
 .center{
   justify-content: center;

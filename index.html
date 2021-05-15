@@ -16,10 +16,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 d-flex">
-                    <h3>
+                    <h5>
                         <span id="collected-toast" class="px-5">Collected Toast</span>
                         <span id="toast-vault" class="px-5">Toast Vault</span>
-                    </h3>
+                    </h5>
                 </div>
             </div>
         </div>
@@ -31,18 +31,39 @@
                 <image src="assets/img/toast.png" onclick="pickToast()" width="200px>">
             </div>
         </div>
-        <div class="col-12">
-            <button class="btn btn-info" onclick="pickToast()">Mine Toast</button>
-        </div>
+
     </section>
+
+
     <section class="mid-section container-fluid">
-        <div class="row  d-flex">
+        <div class="row  d-flex  center space-between">
+
+
+
             <div class="col-4 d-flex flex-wrap offset=2">
-                <div class="col-12 " style="max-width: 540px;">
+                <div class="container border rounded">
+                    <div class="row"></div>
+                    <div class="col-12 " style="max-width: 540px;">
+                        <div id="upgrade-space-left"
+                            class="row no-gutters text-dark  border-info rounded bg-light my-3">
+                            <!--  start here left side -->
+                            <div class="col-4" onclick="updateNumToast()">
+                                <img class="img-fluid" src="assets/img/10k-toaster.png" alt="..." width="100">
+                            </div>
+                            <div class="col-8  my-auto ">
+                                <div class="">
+                                    <p class="no-margin"> 10K Toaster</p>
+                                    <p class="no-margin"> +2 per click</p>
+                                    <p class="no-margin"> Cost: 100</p>
+                                </div>
+                            </div>
+                        </div>
 
-
-                    <div class="row no-gutters border bg-light my-3 height-50">
-                        <div class="col-4">
+                        <!--
+                        <div class="row no-gutters text-dark border-info rounded bg-light my-3"
+                        onclick="updateFlameToast(1)">
+               -->
+                        <div class="col-4" onclick="updateFlameToast()">
                             <img class="img-fluid" src="assets/img/10k-toaster.png" onclick="updateNumToast()" alt="..."
                                 width="100">
                         </div>
@@ -50,35 +71,77 @@
                             <div class="">
                                 <p class="no-margin"> 10K Toaster</p>
                                 <p class="no-margin"> +2 per click</p>
-                                <p class="no-margin"> Cost: 2K></p>
+                                <p class="no-margin"> Cost: 100</p>
+                            </div>
+                        </div>
+                        <!--    </div> -->
+
+
+                        <div class="row no-gutters text-dark border-info rounded bg-light my-3">
+                            <div class="col-4">
+                                <img class="img-fluid" src="assets/img/10k-toaster.png" alt="..." width="100">
+                            </div>
+                            <div class="col-8  my-auto ">
+                                <div class="">
+                                    <p class="no-margin"> 10K Toaster</p>
+                                    <p class="no-margin"> +2 per click</p>
+                                    <p class="no-margin"> Cost: 100</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="row no-gutters border bg-light my-3">
-                        <div class="col-4">
-                            <img class="img-fluid" src="assets/img/10k-toaster.png" onclick="updateNumToast()" alt="..."
-                                width="100">
+            <div class="col-4 d-flex flex-wrap offset=2">
+                <div class="container border rounded">
+                    <div class="row"></div>
+                    <div class="col-12 " style="max-width: 540px;">
+                        <div class="row no-gutters text-dark  border-info rounded bg-light my-3"
+                            onclick="updateNumToast()">
+                            <div class="col-4">
+                                <img class="img-fluid" src="assets/img/10k-toaster.png" alt="..." width="100">
+                            </div>
+                            <div class="col-8  my-auto ">
+                                <div class="">
+                                    <p class="no-margin"> 10K Toaster</p>
+                                    <p class="no-margin"> +2 per click</p>
+                                    <p class="no-margin"> Cost: 100</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-8  my-auto ">
-                            <div class="">
-                                <p class="no-margin"> 10K Toaster</p>
-                                <p class="no-margin"> +2 per click</p>
-                                <p class="no-margin"> Cost: 2K></p>
+                        <div class="row no-gutters text-dark border-info rounded bg-light my-3"
+                            onclick="updateNumToast()">
+                            <div class="col-4">
+                                <img class="img-fluid" src="assets/img/10k-toaster.png" onclick="updateNumToast()"
+                                    alt="..." width="100">
+                            </div>
+                            <div class="col-8  my-auto ">
+                                <div class="">
+                                    <p class="no-margin"> 10K Toaster</p>
+                                    <p class="no-margin"> +2 per click</p>
+                                    <p class="no-margin"> Cost: 100</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutters text-dark border-info rounded bg-light my-3">
+                            <div class="col-4">
+                                <img class="img-fluid" src="assets/img/10k-toaster.png" alt="..." width="100">
+                            </div>
+                            <div class="col-8  my-auto ">
+                                <div class="">
+                                    <p class="no-margin"> 10K Toaster</p>
+                                    <p class="no-margin"> +2 per click</p>
+                                    <p class="no-margin"> Cost: 100</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
 
 
-        </div>
-        </div>
-        <div class="col-12">
-            <button class="btn btn-info" onclick="pickToast()">Mine Toast</button>
+
         </div>
     </section>
 
