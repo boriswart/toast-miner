@@ -91,6 +91,16 @@ function respondEvntUpgrade(key) {
         toastVault -= productionKey.cost
         pushMods(productionKey)
         drawScreen()
+        productionKey.cost = productionKey.cost * 10;
+        drawUpgrades("left", 3, 0)
+        if (productionKey.key == "10Kwtoaster") {
+            upgradeNumToast(2)
+        } else if (productionKey.key == "flamethrower") {
+            upgradeNumToast(5)
+        }
+
+
+
     } else {
         alert("You do not have enough Toast!")
     }
@@ -150,7 +160,11 @@ function drawUpgrades(side, count, starting) {
         </div>
         `
     }
-    upgradeElem.innerHTML = template
+    if (template != "") {
+        upgradeElem.innerHTML = template
+    } else {
+        upgradeElem.innerHTML = "<!-- template is empty  -->"
+    }
 }
 
 function drawScreen() {
@@ -159,8 +173,8 @@ function drawScreen() {
     //drawUpgrades("left", 3, 0)  //draws left side starting from 0 to 3 of productionUpgrades
     //drawUpgrades("right", 3, 3)  //draws right side starting from 3 to 6 of productionUpgrades
 }
-function upgradeNumToast() {
-    if (numToastPerClick < 2) numToastPerClick = 2
+function upgradeNumToast(quantity) {
+    numToastPerClick = quantity
     //TODO    disable future numToastPerClick 
     console.log("numToastPerClick updated to two!", numToastPerClick)
 }
