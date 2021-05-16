@@ -11,6 +11,7 @@ let productionUpgrades = [{
     desc: "2 toastes per click",
     cost: 10,
     img: "assets/img/5k-toaster.png",
+    imgMod: "assets/img/5k-toaster-mod.png",
     func: "respondEvntUpgrade",
     passive: false,
     enabled: false
@@ -20,8 +21,9 @@ let productionUpgrades = [{
     key: "flamethrower",
     name: "Flame Thrower",
     desc: "5 toasts per click",
-    cost: 50,
+    cost: 10,
     img: "assets/img/flame-throw-small.png",
+    imgMod: "assets/img/flame-throw-mod.png",
     func: "respondEvntUpgrade",
     passive: false,
     enabled: false
@@ -32,6 +34,7 @@ let productionUpgrades = [{
     desc: "5 toasts per period",
     cost: 10,
     img: "assets/img/robot-toaster.png",
+    imgMod: "assets/img/robot-toaster-mod.png",
     func: "respondEvntUpgrade",
     passive: true,
     enabled: false
@@ -43,6 +46,7 @@ let productionUpgrades = [{
     desc: "period reduced to 3s",
     cost: 20,
     img: "assets/img/robot-toaster2.png",
+    imgMod: "assets/img/robot-toaster2-mod.png",
     func: "respondEvntUpgrade",
     passive: true,
     enabled: false
@@ -53,6 +57,7 @@ let productionUpgrades = [{
     desc: "period reduced to 3s",
     cost: 20,
     img: "assets/img/robot-toaster3.png",
+    imgMod: "assets/img/robot-toaster3-mod.png",
     func: "respondEvntUpgrade",
     passive: true,
     enabled: false
@@ -63,6 +68,7 @@ let productionUpgrades = [{
     desc: "period to to 3s",
     cost: 20,
     img: "assets/img/robot-toaster4.png",
+    imgMod: "assets/img/robot-toaster4-mod.png",
     func: "respondEvntUpgrade",
     passive: true,
     enabled: false
@@ -109,7 +115,7 @@ function drawMods() {
             template += /*html*/`
                 "<!--    Earned Mod #"${x + 1}"   -->""
                 <div class="col-4 container-bg-highlight text-light">
-                    <img class="img-fluid" src="${mods[x].img}" alt="..." width="100">
+                    <img class="img-fluid" src="${mods[x].imgMod}" alt="..." width="100">
                     <div class="col-12  my-auto ">
                         <div class="">
                             <p class="no-margin">${mods[x].name}</p>
@@ -150,8 +156,8 @@ function drawUpgrades(side, count, starting) {
 function drawScreen() {
     collectedToastElem.innerText = `Toast Collected: ${collectedToast.toString()}`
     toastVaultElem.innerText = `Toast Vault: ${toastVault.toString()}`
-    drawUpgrades("left", 3, 0)  //draws left side starting from 0 to 3 of productionUpgrades
-    drawUpgrades("right", 3, 3)  //draws right side starting from 3 to 6 of productionUpgrades
+    //drawUpgrades("left", 3, 0)  //draws left side starting from 0 to 3 of productionUpgrades
+    //drawUpgrades("right", 3, 3)  //draws right side starting from 3 to 6 of productionUpgrades
 }
 function upgradeNumToast() {
     if (numToastPerClick < 2) numToastPerClick = 2
@@ -159,4 +165,6 @@ function upgradeNumToast() {
     console.log("numToastPerClick updated to two!", numToastPerClick)
 }
 drawScreen()
+drawUpgrades("left", 3, 0)  //draws left side starting from 0 to 3 of productionUpgrades
+drawUpgrades("right", 3, 3)  //draws right side starting from 3 to 6 of productionUpgrades
 drawMods()
