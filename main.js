@@ -9,7 +9,7 @@ let productionUpgrades = [{
     key: "10Kwtoaster",
     name: "10 Kw Toaster",
     desc: "2 toastes per click",
-    cost: 100,
+    cost: 10,
     img: "assets/img/5k-toaster.png",
     func: "respondEvntUpgrade",
     passive: false,
@@ -20,7 +20,7 @@ let productionUpgrades = [{
     key: "flamethrower",
     name: "Flame Thrower",
     desc: "5 toasts per click",
-    cost: 500,
+    cost: 50,
     img: "assets/img/flame-throw-small.png",
     func: "respondEvntUpgrade",
     passive: false,
@@ -30,7 +30,7 @@ let productionUpgrades = [{
     key: "robottoaster",
     name: "Robot Toaster",
     desc: "5 toasts per period",
-    cost: 1000,
+    cost: 10,
     img: "assets/img/robot-toaster.png",
     func: "respondEvntUpgrade",
     passive: true,
@@ -41,7 +41,7 @@ let productionUpgrades = [{
     key: "2ndrobottoaster",
     name: "2nd Robot Toaster",
     desc: "period reduced to 3s",
-    cost: 2000,
+    cost: 20,
     img: "assets/img/robot-toaster2.png",
     func: "respondEvntUpgrade",
     passive: true,
@@ -51,7 +51,7 @@ let productionUpgrades = [{
     key: "3rdrobottoaster",
     name: "3rd Robot Toaster",
     desc: "period reduced to 3s",
-    cost: 2000,
+    cost: 20,
     img: "assets/img/robot-toaster3.png",
     func: "respondEvntUpgrade",
     passive: true,
@@ -61,7 +61,7 @@ let productionUpgrades = [{
     key: "4throbottoaster",
     name: "4th Robot Toaster",
     desc: "period to to 3s",
-    cost: 2000,
+    cost: 20,
     img: "assets/img/robot-toaster4.png",
     func: "respondEvntUpgrade",
     passive: true,
@@ -92,9 +92,10 @@ function respondEvntUpgrade(key) {
 }
 
 function pushMods(modName) {
-    let mod = productionUpgrades.find(x => x.key == modName)
+    let mod = productionUpgrades.find(x => x.key == modName.key)
     console.log(mod)
     mods.push(mod)
+    console.log("mods after push: ", mods)
     drawMods()
 
 }
@@ -103,6 +104,7 @@ function drawMods() {
     let modDispElem = document.getElementById("mod-display-area")
     let template = ""
     if (mods != []) {
+        console.log("mods during drawMods()", mods.length, mods)
         for (let x = 0; x < mods.length; x++) {
             template += /*html*/`
                 "<!--    Earned Mod #"${x + 1}"   -->""
@@ -157,3 +159,4 @@ function upgradeNumToast() {
     console.log("numToastPerClick updated to two!", numToastPerClick)
 }
 drawScreen()
+drawMods()
