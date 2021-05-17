@@ -1,4 +1,3 @@
-
 let toastVault = 0
 let collectedToast = 0
 let numToastPerClick = 1;
@@ -138,7 +137,7 @@ function drawMods() {
                 "<!--    Earned Mod #"${x + 1}"   -->""
                 <div class="col-4 container-bg-highlight text-light">
                     <img class="img-fluid" src="${mods[x].imgMod}" alt="..." width="100">
-                    <div class="col-12  my-auto ">
+                    <div class="col-10  my-auto ">
                         <div class="">
                             <p class="no-margin">${mods[x].name}</p>
                         </div>
