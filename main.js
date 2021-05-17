@@ -2,6 +2,9 @@
 let toastVault = 0
 let collectedToast = 0
 let numToastPerClick = 1;
+let numAutoToasts = 0
+let autoToastOn = false
+let autoToastTime = 5000
 let toastVaultElem = document.getElementById("toast-vault")
 let collectedToastElem = document.getElementById("collected-toast")
 let productionUpgrades = [{
@@ -99,8 +102,17 @@ function respondEvntUpgrade(key) {
             upgradeNumToast(5)
         }
 
-
-
+        if (productionKey.key == "robottoaster") {
+            if (numAutoToasts == 0) numAutoToasts = 1
+            autoToastTime = 3000
+            startAutoToastCollection()
+        } else if (productionKey.key == "2ndrobottoaster") {
+            if (numAutoToasts == 1) numAutoToasts = 2
+        } else if (productionKey.key == "3rdrobottoaster") {
+            if (numAutoToasts == 2) numAutoToasts = 5
+        } else if (productionKey.key == "4throbottoaster") {
+            autoToastTime = 2000
+        }
     } else {
         alert("You do not have enough Toast!")
     }
@@ -178,6 +190,19 @@ function upgradeNumToast(quantity) {
     //TODO    disable future numToastPerClick 
     console.log("numToastPerClick updated to two!", numToastPerClick)
 }
+
+function startAutoToastCollection() {
+    autoToastOn = true
+    setTimeout(collectAutoToast, autoToastTime)
+}
+
+function collectAutoToast() {
+    toastVault += numAutoToasts
+    drawScreen()
+    setTimeout(collectAutoToast, autoToastTime)
+}
+
+
 drawScreen()
 drawUpgrades("left", 3, 0)  //draws left side starting from 0 to 3 of productionUpgrades
 drawUpgrades("right", 3, 3)  //draws right side starting from 3 to 6 of productionUpgrades
