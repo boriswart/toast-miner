@@ -33,7 +33,7 @@ let productionUpgrades = [{
 {
     key: "robottoaster",
     name: "Robot Toaster",
-    desc: "5 toasts per period",
+    desc: "1 t per auto period",
     cost: 10,
     img: "assets/img/robot-toaster.png",
     imgMod: "assets/img/robot-toaster-mod.png",
@@ -45,7 +45,7 @@ let productionUpgrades = [{
 
     key: "2ndrobottoaster",
     name: "2nd Robot Toaster",
-    desc: "period reduced to 3s",
+    desc: "2 per auto period 3s",
     cost: 20,
     img: "assets/img/robot-toaster2.png",
     imgMod: "assets/img/robot-toaster2-mod.png",
@@ -56,7 +56,7 @@ let productionUpgrades = [{
 {
     key: "3rdrobottoaster",
     name: "3rd Robot Toaster",
-    desc: "period reduced to 3s",
+    desc: "5t per auto period 3s",
     cost: 20,
     img: "assets/img/robot-toaster3.png",
     imgMod: "assets/img/robot-toaster3-mod.png",
@@ -67,7 +67,7 @@ let productionUpgrades = [{
 {
     key: "4throbottoaster",
     name: "4th Robot Toaster",
-    desc: "period to to 3s",
+    desc: "period reduction to 2s",
     cost: 20,
     img: "assets/img/robot-toaster4.png",
     imgMod: "assets/img/robot-toaster4-mod.png",
@@ -93,7 +93,7 @@ function respondEvntUpgrade(key) {
         toastVault -= productionKey.cost
         pushMods(productionKey)
         drawScreen()
-        productionKey.cost = productionKey.cost * 10;
+        productionKey.cost = productionKey.cost * 10
         drawUpgrades("left", 3, 0)
         if (productionKey.key == "10Kwtoaster") {
             upgradeNumToast(2)
@@ -102,14 +102,24 @@ function respondEvntUpgrade(key) {
         }
 
         if (productionKey.key == "robottoaster") {
+            productionKey.cost = productionKey.cost * 10
+            drawUpgrades("left", 3, 0)
             if (numAutoToasts == 0) numAutoToasts = 1
             autoToastTime = 3000
             startAutoToastCollection()
         } else if (productionKey.key == "2ndrobottoaster") {
+            productionKey.cost = productionKey.cost * 10
+            drawUpgrades("right", 3, 3)
             if (numAutoToasts == 1) numAutoToasts = 2
+            productionKey.cost = productionKey.cost * 10
+            drawUpgrades("right", 3, 3)
         } else if (productionKey.key == "3rdrobottoaster") {
+            productionKey.cost = productionKey.cost * 10
+            drawUpgrades("right", 3, 3)
             if (numAutoToasts == 2) numAutoToasts = 5
         } else if (productionKey.key == "4throbottoaster") {
+            productionKey.cost = productionKey.cost * 10
+            drawUpgrades("right", 3, 3)
             autoToastTime = 2000
         }
     } else {
@@ -136,7 +146,7 @@ function drawMods() {
             template += /*html*/`
                 "<!--    Earned Mod #"${x + 1}"   -->""
                 <div class="col-4 container-bg-highlight text-light">
-                    <img class="img-fluid" src="${mods[x].imgMod}" alt="..." width="100">
+                    <img class="img-fluid" src="${mods[x].imgMod}" alt="..." width="80">
                     <div class="col-10  my-auto ">
                         <div class="">
                             <p class="no-margin">${mods[x].name}</p>
@@ -161,7 +171,7 @@ function drawUpgrades(side, count, starting) {
         <img class="img-fluid" src="${productionUpgrades[x].img}"
         alt="..." width="100">
         </div>
-        <div class="col-8  my-auto">
+        <div class="col-6  my-auto">
         <div>
         <p class="no-margin"> ${productionUpgrades[x].name}</p>
         <p class="no-margin"> ${productionUpgrades[x].desc}</p>
@@ -197,6 +207,7 @@ function startAutoToastCollection() {
 
 function collectAutoToast() {
     toastVault += numAutoToasts
+    collectedToast += numAutoToasts
     drawScreen()
     setTimeout(collectAutoToast, autoToastTime)
 }
