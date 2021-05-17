@@ -143,8 +143,7 @@ function drawMods() {
     if (mods != []) {
         console.log("mods during drawMods()", mods.length, mods)
         for (let x = 0; x < mods.length; x++) {
-            template += /*html*/`
-                "<!--    Earned Mod #"${x + 1}"   -->""
+            template += `
                 <div class="col-4 container-bg-highlight text-light">
                     <img class="img-fluid" src="${mods[x].imgMod}" alt="..." width="80">
                     <div class="col-10  my-auto ">
